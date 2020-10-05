@@ -1,6 +1,7 @@
 console.log("INSIDE index.js");
 
 import mapboxgl from "mapbox-gl";
+import buildmarker from "./marker"
 
 mapboxgl.accessToken =
   "pk.eyJ1Ijoic2praW01MzAiLCJhIjoiY2tmd3A2MnJqMGt6ODJxazA4bm9nenZqMiJ9._cHwLwC4iCMuC9u4C1wZzQ";
@@ -11,3 +12,6 @@ const map = new mapboxgl.Map({
   zoom: 12, // starting zoom
   style: "mapbox://styles/mapbox/streets-v10", // mapbox has lots of different map styles available.
 });
+
+
+new mapboxgl.Marker(buildmarker('Hotel')).setLngLat([-74.009151, 40.705086]).addTo(map);
